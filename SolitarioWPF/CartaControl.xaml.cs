@@ -1,9 +1,8 @@
-﻿
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows.Media;
 using Solitario.Models;
 
-namespace SolitarioWPF
+namespace Solitario
 {
     public partial class CartaControl : UserControl
     {
@@ -16,6 +15,15 @@ namespace SolitarioWPF
 
         private void MostrarCarta(Carta carta)
         {
+            if (!carta.EstaBocaArriba)
+            {
+                FondoCarta.Background = Brushes.Navy;
+                ContenidoCarta.Visibility =
+                    System.Windows.Visibility.Collapsed;
+
+                return;
+            }
+
             string valor = carta.Valor switch
             {
                 1 => "A",

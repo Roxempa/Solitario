@@ -39,24 +39,39 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Mazo -->
-            <Border Grid.Column="0"
-                    Width="90"
-                    Height="125"
-                    BorderBrush="White"
-                    BorderThickness="2"
-                    CornerRadius="8"
-                    Background="#174C91"/>
+			<!-- Mazo -->
+			<Border Grid.Column="0"
+                Width="90"
+                Height="125"
+                BorderBrush="White"
+                BorderThickness="2"
+                CornerRadius="8"
+                Background="#174C91"
+                MouseLeftButtonDown="Mazo_MouseLeftButtonDown">
 
-            <!-- Descarte -->
-            <Border Grid.Column="1"
-                    Width="90"
-                    Height="125"
-                    BorderBrush="White"
-                    BorderThickness="2"
-                    CornerRadius="8"
-                    Background="#FFFFFF"
-                    Opacity="0.25"/>
+				<TextBlock x:Name="TxtCartasMazo"
+						   Text="24"
+						   Foreground="White"
+						   FontSize="22"
+						   FontWeight="Bold"
+						   HorizontalAlignment="Center"
+						   VerticalAlignment="Center"/>
+
+			</Border>
+
+			<!-- Descarte -->
+			<Grid Grid.Column="1"
+				  Width="90"
+				  Height="125">
+
+				<Border BorderBrush="White"
+						BorderThickness="2"
+						CornerRadius="8"
+						Background="Transparent"/>
+
+				<ContentControl x:Name="PanelDescarte"/>
+
+			</Grid>
 
             <!-- Fundaciones -->
             <ItemsControl Grid.Column="3"
@@ -103,41 +118,12 @@
         </Grid>
 
         <!-- Zona inferior: columnas -->
-        <UniformGrid Grid.Row="2"
-                     Rows="1"
-                     Columns="7"
-                     HorizontalAlignment="Stretch"
-                     VerticalAlignment="Top">
-
-            <Border Margin="5"
-                    Background="#12533D"
-                    CornerRadius="5"/>
-
-            <Border Margin="5"
-                    Background="#12533D"
-                    CornerRadius="5"/>
-
-            <Border Margin="5"
-                    Background="#12533D"
-                    CornerRadius="5"/>
-
-            <Border Margin="5"
-                    Background="#12533D"
-                    CornerRadius="5"/>
-
-            <Border Margin="5"
-                    Background="#12533D"
-                    CornerRadius="5"/>
-
-            <Border Margin="5"
-                    Background="#12533D"
-                    CornerRadius="5"/>
-
-            <Border Margin="5"
-                    Background="#12533D"
-                    CornerRadius="5"/>
-
-        </UniformGrid>
+		<UniformGrid x:Name="PanelColumnas"
+             Grid.Row="2"
+             Rows="1"
+             Columns="7"
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Top"/>
 
     </Grid>
 

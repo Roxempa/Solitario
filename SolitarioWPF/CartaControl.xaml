@@ -1,16 +1,18 @@
-﻿<UserControl x:Class="SolitarioWPF.CartaControl"
+﻿<UserControl x:Class="Solitario.CartaControl"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              Width="90"
              Height="125">
 
-	<Border Background="White"
+	<Border x:Name="FondoCarta"
+            Background="White"
             BorderBrush="#333333"
             BorderThickness="1"
             CornerRadius="8"
             Padding="6">
 
-		<Grid>
+		<Grid x:Name="ContenidoCarta">
+
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto"/>
 				<RowDefinition Height="*"/>
